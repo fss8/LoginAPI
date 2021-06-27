@@ -36,7 +36,6 @@ ul {
   list-style: none;
   padding: 0;
 }
-
 button {
   border: none;
   margin: 0;
@@ -90,28 +89,6 @@ body {
 }
 /*END RESETS*/
 /* GLOBAL STYLES */
-.caixa {
-  border-width:0.5px;
-  border-style:solid;
-  border-color: #d3d3d3;
-  background-color: #ffffff;
-  font-size: 1.6rem;
-  
-  /*-webkit-border-radius: 20px 0 20px 20px;
-  border-radius: 20px 0 20px 20px;
-  padding: 0.1% 0.1% 0.1% 0.1%;
-  padding-top: 5px;*/
-  padding-left: 2rem;
-  padding-block: 1rem;
-  /*margin-top: 5px;*/
-  /*background-image: -webkit-linear-gradient(top, #d2d4da, #200B66);
-  background-image:         linear-gradient(to bottom, #d2d4da, #200B66);*/
-  /*opacity: 0.8;*/
-}
-.texto{
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-}
 .form-group > input[type="text"] {
   display: inline-block;
   margin-top: 0.4rem;
@@ -144,7 +121,7 @@ body {
 }
 .botaoentrar {
   border-radius: 0.5rem;
-  /*margin-left: 43%;*/
+  margin-left: 43%;
 }
 .btn-group {
   display: flex;
