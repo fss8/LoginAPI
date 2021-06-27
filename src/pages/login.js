@@ -14,7 +14,7 @@ export const Contextotal = createContext();
 function Main() {
 
   
-  const { authenticated, handleLogin, logininput, senhainput} = useContext(Context);
+  const { authenticated, handleLogin} = useContext(Context);
   console.log(authenticated)
 
   const handleFormSubmit = e => {
@@ -23,12 +23,14 @@ function Main() {
 
   const handleImputChangeus = e => {
     var user = e.target.value;
-    setSenhainput(user);
+    localStorage.setItem('usuario', user)
+    //setSenhainput(user);
 
   }
   const handleImputChangess = e => {
     var senha = e.target.value;
-    setLogininput(senha);
+    localStorage.setItem('senha', senha)
+    //setLogininput(senha);
   }
   
   return(
