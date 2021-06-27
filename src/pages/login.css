@@ -89,6 +89,9 @@ body {
 }
 /*END RESETS*/
 /* GLOBAL STYLES */
+.textosemlinha{
+  text-decoration: none;
+}
 .form-group > input[type="text"] {
   display: inline-block;
   margin-top: 0.4rem;
@@ -120,6 +123,7 @@ body {
   background-color: rgb(113, 115, 228);
 }
 .botaoentrar {
+  text-decoration: none;
   border-radius: 0.5rem;
   /*margin-left: 43%;*/
 }

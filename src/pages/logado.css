@@ -121,7 +121,7 @@ body {
 }
 .botaoentrar {
   border-radius: 0.5rem;
-  /*margin-left: 43%;*/
+  margin-left: 43%;
 }
 .btn-group {
   display: flex;
