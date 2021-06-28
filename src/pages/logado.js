@@ -1,5 +1,4 @@
 import React , { useContext, useState, useEffect } from 'react';
-//import './logado.css';
 import api from '../api';
 
 import {Context} from '../Context/AuthContext';
@@ -12,8 +11,6 @@ function Main() {
       const {data } = await api.get('/get_clients');
 
       setClients(data.clients);
-      //console.log(data.clients);
-      //console.log(clients)
     })();
   },[])
 
@@ -53,12 +50,5 @@ function Main() {
 function FuncaoClica(id, nome){
   return '/link/'+ id + '+' + nome;
 }
-
-/*function handleGO(nome, id){
-  localStorage.setItem('nome', nome);
-  localStorage.setItem('id', id)
-  console.log(localStorage.getItem('id'))
-  //window.location.replace("/id")
-}*/
 
 export default Main;

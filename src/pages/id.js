@@ -1,8 +1,5 @@
 import React , { useContext, useState, useEffect } from 'react';
-//import {Chart} from 'chart.js';
 import { Line } from 'react-chartjs-2';
-//import '../jquery.min.js';
-//import './id.css';
 import api from '../api';
 
 import {Context} from '../Context/AuthContext';
@@ -14,16 +11,9 @@ function Main() {
   useEffect(() => {
     (async () =>{
       var id = localStorage.getItem('id')
-      //console.log(id)
       var consulta = '/get_client_data/' + id;
       const {data } = await api.get(consulta);
-      //console.log(data)
       setCliente(data);
-      //abc = data.data
-
-      //console.log(cliente.map())
-      //console.log(data.clients);
-      //console.log(clients)
     })();
   },[])
 
@@ -44,7 +34,6 @@ function Main() {
             data: cliente.data,
             fill: true
             //backgroundColor: g,
-            // ...the rest
             }],
         };
     }
@@ -84,9 +73,5 @@ function Main() {
     
   )
 }
-
-/*function FuncaoClica(id){
-  console.log("clicado")
-}*/
 
 export default Main;

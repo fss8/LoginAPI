@@ -19,13 +19,10 @@ function Main() {
   const handleImputChangeus = e => {
     var user = e.target.value;
     localStorage.setItem('usuario', user)
-    //setSenhainput(user);
-
   }
   const handleImputChangess = e => {
     var senha = e.target.value;
     localStorage.setItem('senha', senha)
-    //setLogininput(senha);
   }
   
   return(
@@ -49,8 +46,6 @@ function Main() {
           className="input input__lg entrada"
           name="usuario"
           onChange={handleImputChangeus}
-          //autoComplete='off'
-          //value={values.user}
         />
         <div className="textologin">Password</div>
         <input
@@ -60,7 +55,6 @@ function Main() {
           name="senha"
           onChange={handleImputChangess}
           autoComplete='off'
-          //value={values.password}
         />
         <button type="button" className="btn btn__primary botaoentrar" onClick={handleLogin}>
             Entrar

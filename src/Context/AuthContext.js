@@ -1,20 +1,17 @@
 import React, { createContext, useState, useEffect} from 'react';
-//import ReactDOM from 'react-dom';
 import api from '../api';
 
 const Context = createContext();
 
 function AuthProvider({children}){
-  //const {valores} = useContext(Contextotal)
+  
   const [buttonPopup, setButtonPopup] = useState(false);
   const [authenticated, setAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(()=>{
         const token = localStorage.getItem('token');
-        //console.log(token)
         if(token){
-          //console.log(JSON.parse(token))
           api.defaults.headers.Authorization = JSON.parse(token);
           setAuthenticated(true);
         }
@@ -42,7 +39,6 @@ function AuthProvider({children}){
     if(token != null){
       localStorage.setItem('token', JSON.stringify(token));
       api.defaults.headers.Authorization = token;
-      //console.log("aaaaa")
       window.location.replace("/");
     }else{
       //Popup Authenticação falhou
@@ -56,8 +52,6 @@ function AuthProvider({children}){
   }
   
   function handleLogout(){
-    //authorization como undefined
-    //setTokenb('')
     localStorage.setItem('usuario', '')
     localStorage.setItem('senha', '') 
 
@@ -65,18 +59,13 @@ function AuthProvider({children}){
     localStorage.removeItem('token')
     api.defaults.headers.Authorization = undefined;
     
-    //redirecionar usuário
-    //console.log("Saindo")
     window.location.replace("/login");
   }
 
   function handleBack(){
-    //authorization como undefined
-    //setTokenb('')
     localStorage.setItem('id', '')
 
     //redirecionar usuário
-    //console.log("Saindo")
     window.location.replace("/");
   }
 
