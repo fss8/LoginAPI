@@ -49,8 +49,8 @@ function Routes(){
         <Switch>
           <CustomRoute exact path='/Login'  component={Login}/>
           <CustomRoute isPrivate exact path="/" component={Logado}/>
-          <CustomRoute exact path='/id' component={Id}/>
-          <CustomRoute path='/link' component={Id}/>
+          <CustomRoute isPrivate exact path='/id' component={Id}/>
+          <CustomRoute isPrivate path='/link' component={Id}/>
         </Switch>
 
     </BrowserRouter>
