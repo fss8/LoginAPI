@@ -1,17 +1,17 @@
 import React, { useContext } from 'react';
-import './login.css';
+import '../index.css';
 
 import logo from '../logovagalu.png';
 import '../App.css';
 
+import Popup from '../components/popup';
+
 import { Context } from '../Context/AuthContext';
 
 function Main() {
-
   
-  const { authenticated, handleLogin} = useContext(Context);
-  console.log(authenticated)
-
+  const { handleLogin, buttonPopup, setButtonPopup} = useContext(Context);  
+  
   const handleFormSubmit = e => {
     e.preventDefault();
   }
@@ -29,24 +29,30 @@ function Main() {
   }
   
   return(
-    
-    <div className="todoapp stack-large">
+    <div className='divgrande'>
+    <div className="divisao">
+      <div>
+      <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+        <h2>Login/Senha Incorreta</h2>
+      </Popup>
+      </div>
+      <div className="todoapp">
+        
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-      <h1>Qualquecoisa</h1>
       <form onSubmit={handleFormSubmit}>
-        <h4>Username </h4>
+        <div className="textologin">Username</div>
         <input
-          type="text/javascript"
+          type="text"
           id="loginipt"
-          className="input input__lg entrada2"
+          className="input input__lg entrada"
           name="usuario"
           onChange={handleImputChangeus}
           //autoComplete='off'
           //value={values.user}
         />
-        <h4>Password </h4>
+        <div className="textologin">Password</div>
         <input
           type="password"
           id="senhaipt"
@@ -60,6 +66,8 @@ function Main() {
             Entrar
         </button>
       </form>
+    </div>
+    </div>
     </div>
     
   )

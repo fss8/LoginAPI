@@ -1,8 +1,8 @@
 import React , { useContext, useState, useEffect } from 'react';
 //import {Chart} from 'chart.js';
-import { Doughnut, Line } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 //import '../jquery.min.js';
-import './id.css';
+//import './id.css';
 import api from '../api';
 
 import {Context} from '../Context/AuthContext';
@@ -17,7 +17,7 @@ function Main() {
       //console.log(id)
       var consulta = '/get_client_data/' + id;
       const {data } = await api.get(consulta);
-      console.log(data)
+      //console.log(data)
       setCliente(data);
       //abc = data.data
 
@@ -41,7 +41,8 @@ function Main() {
             fontStyle: "bold",
             borderWidth: 3,
             borderColor: 'rgba(255, 5, 5, 0.945)',
-            data: cliente.data
+            data: cliente.data,
+            fill: true
             //backgroundColor: g,
             // ...the rest
             }],
@@ -62,20 +63,23 @@ function Main() {
     }
 
   return(
-    <div>
-      <h1>Tabela</h1>
-      <h2>{variavel}</h2>
-      <Line data={data2} options={opt2}/>
-      <button type="button" onClick={handleBack}>
-        Voltar
-      </button>
-      <p>     </p>
-      <button type="button" onClick={handleLogout}>
-        Sair
-      </button>
+    <div className='system'>
+      <div className='sistema'>
+        <h1>Tabela</h1>
+        <h2>{variavel}</h2>
+        <Line data={data2} options={opt2}/>
+        <button type="button" onClick={handleBack}>
+          Voltar
+        </button>
+        <p>     </p>
+        <button type="button" onClick={handleLogout}>
+          Sair
+        </button>
       
       
+      </div>
     </div>
+    
     
     
   )

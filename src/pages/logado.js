@@ -1,5 +1,5 @@
 import React , { useContext, useState, useEffect } from 'react';
-import './logado.css';
+//import './logado.css';
 import api from '../api';
 
 import {Context} from '../Context/AuthContext';
@@ -18,7 +18,8 @@ function Main() {
   },[])
 
   return(
-    <div>
+    <div className='system'>
+    <div className='sistema'>
       <div className='caixa'>
         <h1>Visão Geral</h1>
       </div>
@@ -43,21 +44,21 @@ function Main() {
         Sair
       </button>
     </div>
+    </div>
     
     
   )
 }
 
 function FuncaoClica(id, nome){
-  var id = id; var nome = nome;
   return '/link/'+ id + '+' + nome;
 }
 
-function handleGO(nome, id){
+/*function handleGO(nome, id){
   localStorage.setItem('nome', nome);
   localStorage.setItem('id', id)
   console.log(localStorage.getItem('id'))
   //window.location.replace("/id")
-}
+}*/
 
 export default Main;

@@ -6,6 +6,7 @@ const Context = createContext();
 
 function AuthProvider({children}){
   //const {valores} = useContext(Contextotal)
+  const [buttonPopup, setButtonPopup] = useState(false);
   const [authenticated, setAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
 
@@ -44,7 +45,13 @@ function AuthProvider({children}){
       //console.log("aaaaa")
       window.location.replace("/");
     }else{
-      console.log("Erraaaddo")
+      //Popup Authenticação falhou
+      if(buttonPopup === false){
+        setButtonPopup(true);
+        setTimeout(() => {
+          setButtonPopup(false);
+        }, 3000);
+      }
     }
   }
   
@@ -74,7 +81,7 @@ function AuthProvider({children}){
   }
 
   return(
-    <Context.Provider value={{loading, authenticated, handleLogin, handleLogout, handleBack}}>
+    <Context.Provider value={{loading, authenticated, buttonPopup, setButtonPopup, handleLogin, handleLogout, handleBack}}>
       {children}
     </Context.Provider>
   )
